@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="main-container">
-        <a href="todos/index">Todos</a>
+        <a href="/todos">Todos</a>
     </div>
 </body>
 </html>
