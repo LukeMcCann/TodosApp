@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\Todo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TodoFactory extends Factory
+final class TodoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
