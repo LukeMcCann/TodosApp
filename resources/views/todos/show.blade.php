@@ -1,47 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layouts.app')
 
-    <title>{{ $todo->name }}</title>
+@section('content')
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
+<h1 class="text-center my-5">
 
-    <div class="container">
+    {{ $todo->name }}
 
-        <h1 class="text-center my-5">
+</h1>
 
-            {{ $todo->name }}
+<div class="row justify-content-center">
 
-        </h1>
+    <div class="col-md-6">
 
-        <div class="row justify-content-center">
+        <div class="card card-default">
 
-            <div class="col-md-6">
+            <div class="card-header">
 
-                <div class="card card-default">
+                Details
 
-                    <div class="card-header">
-    
-                        Details
-    
-                    </div>
-        
-                    <div class="card-body">
-                        {{ $todo->description }}
-                    </div>
-        
-                </div>
-                
+            </div>
+
+            <div class="card-body">
+                {{ $todo->description }}
             </div>
 
         </div>
-
+        
     </div>
-    
-</body>
-</html>
+
+</div>
+
+@endsection

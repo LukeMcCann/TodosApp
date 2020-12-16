@@ -1,50 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layouts.app')
 
-    <title>Todo List</title>
+@section('content')
+    <h1 class="text-center my-5">Todo List</h1>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
+    <div class="row justify-content-center">
 
-        <h1 class="text-center my-5">Todo List</h1>
-
-        <div class="row justify-content-center">
-
-            <div class="col-md-8">
+        <div class="col-md-8">
                 
-                <div class="card card-default">
+            <div class="card card-default">
                     
-                    <div class="card-header">
+                <div class="card-header">
 
-                        Todos
+                    Todos
 
-                    </div>
+                </div>
 
-                    <div class="card-body">
+                <div class="card-body">
 
-                        <ul class="list-group">
+                    <ul class="list-group">
                             
-                            @foreach ($todos as $todo)
+                        @foreach ($todos as $todo)
 
-                                <li class='list-group-item'>
+                            <li class='list-group-item'>
 
-                                    {{ $todo->name }}
+                                {{ $todo->name }}
 
-                                    <a href="/todos/{{ $todo->id }}" class="btn-primary btn-sm float-right">View</a>
+                                <a href="/todos/{{ $todo->id }}" class="btn-success btn-sm float-right">View</a>
 
-                                </li>
+                            </li>
 
-                            @endforeach
+                        @endforeach
 
-                        </ul>
-
-                    </div>
+                    </ul>
 
                 </div>
 
@@ -53,5 +40,7 @@
         </div>
 
     </div>
-</body>
-</html>
+
+</div>
+
+@endsection
