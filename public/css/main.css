@@ -25,3 +25,14 @@
     border: 5px solid lightgrey;
     border-radius: 15px 50px 30px;
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    background-color: red;
+}
