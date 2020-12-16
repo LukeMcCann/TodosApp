@@ -23,7 +23,7 @@
                     <div class="card-header">
 
                         Todos
-                        
+
                     </div>
 
                     <div class="card-body">
@@ -35,6 +35,8 @@
                                 <li class='list-group-item'>
 
                                     {{ $todo->name }}
+
+                                    <button class="btn-primary btn-sm float-right">View</button>
 
                                 </li>
 
