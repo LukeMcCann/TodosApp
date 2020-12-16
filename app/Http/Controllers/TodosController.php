@@ -13,4 +13,11 @@ final class TodosController extends Controller
 
         return view('todos.index')->with('todos', $todos);
     }
+
+    public function show(int $id)
+    {
+        $todo = Todo::findOrFail($id);
+
+        return view('todos.show')->with('todo', $todo);
+    }
 }
