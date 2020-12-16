@@ -20,4 +20,10 @@ final class TodosController extends Controller
 
         return view('todos.show')->with('todo', $todo);
     }
+
+    public function create(Request $request)
+    {
+        return view('todos.create');
+    }
 }
+

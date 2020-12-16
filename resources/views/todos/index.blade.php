@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
 @section('title')
+
     Todos List
+    
 @endsection
 
 @section('content')
+
     <h1 class="text-center my-5">Todo List</h1>
 
     <div class="row justify-content-center">
@@ -44,7 +47,5 @@
         </div>
 
     </div>
-
-</div>
 
 @endsection

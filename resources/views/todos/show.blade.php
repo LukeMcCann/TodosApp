@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('title')
+
     Todo: {{ $todo->name }}
+    
 @endsection
 
 @section('content')
