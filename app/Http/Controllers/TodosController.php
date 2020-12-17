@@ -21,9 +21,24 @@ final class TodosController extends Controller
         return view('todos.show')->with('todo', $todo);
     }
 
-    public function create(Request $request)
+    public function create()
     {
         return view('todos.create');
     }
+
+    public function store(Request $request)
+    {
+        $body = $request->all();
+
+        $todo = Todo::factory()->create([
+            'name' => $body['name'] ?? 'Task',
+            'description' => $body['description'] ?? 'Description'
+        ]);
+
+        $todo->save();
+
+        return \redirect('/todos');
+    }
+
 }
 

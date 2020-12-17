@@ -13,13 +13,13 @@
         <div class="card card-default">
 
             <div class="card-header">
-                Create New Todo
+                Create New
             </div>
 
             <div class="card-body">
 
-                <form action="">
-
+                <form action="/store" method="POST">
+                    @csrf
                     <div class="form-group">
                 
                         <input type="text" class="form-control" name="name">
@@ -36,7 +36,7 @@
 
                     <div class="form-group">
 
-                        <button class="btn-success float-right">
+                        <button type="submit" class="btn-success float-right">
 
                             Create
 
