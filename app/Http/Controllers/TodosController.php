@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Todos\StoreRequest;
 use Illuminate\Http\Request;
 use App\Models\Todo;
 
@@ -26,7 +27,7 @@ final class TodosController extends Controller
         return view('todos.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $body = $request->all();
 
