@@ -27,11 +27,15 @@
             </div>
 
             <div class="card-body">
-                {{ $todo->description }}
-            </div>
 
+                {{ $todo->description }}
+
+            </div>
+            
         </div>
-        
+
+        <a href="/todos/{{$todo->id}}/edit" class="btn-success btn-sm my-2 float-right">Edit</a>
+
     </div>
 
 </div>

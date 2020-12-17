@@ -41,5 +41,12 @@ final class TodosController extends Controller
         return \redirect('/todos');
     }
 
+    public function edit(int $id)
+    {
+        $todo = Todo::findOrFail($id);
+
+        return view('todos.edit')->with('todo', $todo);
+    }
+
 }
 

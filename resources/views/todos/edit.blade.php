@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    New Todo
+    Edit: {{ $todo->name }}
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
         <div class="card card-default">
 
             <div class="card-header">
-                Create New
+                Edit: {{ $todo->name }}
             </div>
 
             <div class="card-body">
@@ -37,17 +37,17 @@
 
                 @endif 
 
-                <form action="/store" method="POST">
+                <form action="/update" method="POST">
                     @csrf
                     <div class="form-group">
                 
-                        <input type="text" class="form-control" name="name" placeholder="Title">
+                        <input type="text" class="form-control" name="name" placeholder="Title" value="{{ $todo->name }}">
                 
                     </div>
 
                     <div class="form-group">
 
-                        <textarea name="description" placeholder="Description" id="" cols="5" rows="5" class="form-control">
+                        <textarea name="description" placeholder="Description" id="" cols="5" rows="5" class="form-control" value="{{ $todo->description }}">
                             
                         </textarea>
 
