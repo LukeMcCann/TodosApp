@@ -20,6 +20,9 @@
 
                     Todos
 
+                    <a href="/create" class="btn-info btn-sm float-right">+</a>
+
+
                 </div>
 
                 <div class="card-body">
@@ -33,6 +36,8 @@
                                 {{ $todo->name }}
 
                                 <a href="/todos/{{ $todo->id }}" class="btn-success btn-sm float-right">View</a>
+
+                                <a href="/todos/{{$todo->id}}/delete" class="btn-danger btn-sm mx-2 float-right">delete</a>
 
                             </li>
 

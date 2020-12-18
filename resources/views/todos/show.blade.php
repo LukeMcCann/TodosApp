@@ -36,6 +36,7 @@
 
         <a href="/todos/{{$todo->id}}/edit" class="btn-success btn-sm my-2 float-right">Edit</a>
 
+        <a href="/todos/{{$todo->id}}/delete" class="btn-danger btn-sm my-2 float-left">delete</a>
     </div>
 
 </div>

@@ -15,10 +15,8 @@ final class TodosController extends Controller
         return view('todos.index')->with('todos', $todos);
     }
 
-    public function show(int $id)
+    public function show(Todo $todo)
     {
-        $todo = Todo::findOrFail($id);
-
         return view('todos.show')->with('todo', $todo);
     }
 
@@ -41,23 +39,26 @@ final class TodosController extends Controller
         return \redirect('/todos');
     }
 
-    public function edit(int $id)
+    public function edit(Todo $todo)
     {
-        $todo = Todo::findOrFail($id);
-
         return view('todos.edit')->with('todo', $todo);
     }
 
-    public function update(StoreRequest $request, int $id)
+    public function update(StoreRequest $request, Todo $todo)
     {
         $data = $request->all();
-
-        $todo = Todo::findOrFail($id);
 
         $todo->name = $data['name'];
         $todo->description = $data['description'];
 
         $todo->save();
+
+        return redirect('/todos');
+    }
+
+    public function destroy(Todo $todo) 
+    {
+        $todo->delete();
 
         return redirect('/todos');
     }
