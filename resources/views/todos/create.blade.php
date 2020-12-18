@@ -18,7 +18,7 @@
 
             <div class="card-body">
 
-                @if ($errors->any)
+                @if ($errors->any())
 
                     <div class="alert alert-danger">
 
@@ -27,7 +27,9 @@
                             @foreach ($errors->all() as $error)
 
                                 <li class="list-group-item">
+
                                     {{ $error }}
+                                    
                                 </li>
 
                             @endforeach
@@ -47,9 +49,7 @@
 
                     <div class="form-group">
 
-                        <textarea name="description" placeholder="Description" id="" cols="5" rows="5" class="form-control">
-                            
-                        </textarea>
+                        <textarea name="description" id="" cols="5" rows="5" class="form-control">Description</textarea>
 
                     </div>
 

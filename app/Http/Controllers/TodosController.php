@@ -48,5 +48,18 @@ final class TodosController extends Controller
         return view('todos.edit')->with('todo', $todo);
     }
 
+    public function update(StoreRequest $request, int $id)
+    {
+        $data = $request->all();
+
+        $todo = Todo::findOrFail($id);
+
+        $todo->name = $data['name'];
+        $todo->description = $data['description'];
+
+        $todo->save();
+
+        return redirect('/todos');
+    }
 }
 

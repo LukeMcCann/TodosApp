@@ -13,12 +13,14 @@
         <div class="card card-default">
 
             <div class="card-header">
+
                 Edit: {{ $todo->name }}
+
             </div>
 
             <div class="card-body">
 
-                @if ($errors->any)
+                @if($errors->any())
 
                     <div class="alert alert-danger">
 
@@ -27,7 +29,9 @@
                             @foreach ($errors->all() as $error)
 
                                 <li class="list-group-item">
+
                                     {{ $error }}
+                                    
                                 </li>
 
                             @endforeach
@@ -37,7 +41,7 @@
 
                 @endif 
 
-                <form action="/update" method="POST">
+                <form action="/todos/{{ $todo->id }}/update" method="POST">
                     @csrf
                     <div class="form-group">
                 
@@ -47,9 +51,7 @@
 
                     <div class="form-group">
 
-                        <textarea name="description" placeholder="Description" id="" cols="5" rows="5" class="form-control" value="{{ $todo->description }}">
-                            
-                        </textarea>
+                        <textarea name="description" placeholder="Description" id="" cols="5" rows="5" class="form-control" >{{ $todo->description }}</textarea>
 
                     </div>
 
@@ -57,7 +59,7 @@
 
                         <button type="submit" class="btn-success float-right">
 
-                            Create
+                            Save
 
                         </button>
 
